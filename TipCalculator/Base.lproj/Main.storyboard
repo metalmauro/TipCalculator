@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,73 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bill Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mA3-Gp-E7R">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7M-VB-7C2">
+                                <color key="backgroundColor" red="0.74028550392670156" green="0.13805636355559203" blue="0.02142784439317454" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="HKX-Q5-EjJ"/>
+                                    <constraint firstAttribute="width" constant="114" id="PbD-qJ-YZW"/>
+                                </constraints>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uLr-P3-gXn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjd-31-cLD">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t85-n1-eQg">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYi-6k-vrt">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="14" id="h7e-Db-wNF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.77827885728256174" green="0.79426822543025566" blue="0.79622054973821987" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="t85-n1-eQg" firstAttribute="centerY" secondItem="CYi-6k-vrt" secondAttribute="centerY" id="8el-ie-WoO"/>
+                            <constraint firstItem="mA3-Gp-E7R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="80" id="E8H-h6-hld"/>
+                            <constraint firstItem="gjd-31-cLD" firstAttribute="centerX" secondItem="D7M-VB-7C2" secondAttribute="centerX" id="EOz-f0-6ZQ"/>
+                            <constraint firstItem="gjd-31-cLD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="97" id="PLC-SA-oGe"/>
+                            <constraint firstAttribute="bottom" secondItem="D7M-VB-7C2" secondAttribute="bottom" constant="262" id="XYU-cS-X3k"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gjd-31-cLD" secondAttribute="bottom" constant="174" id="bBn-57-NeM"/>
+                            <constraint firstItem="CYi-6k-vrt" firstAttribute="top" secondItem="mA3-Gp-E7R" secondAttribute="bottom" constant="30" id="cT1-wk-Q5F"/>
+                            <constraint firstItem="CYi-6k-vrt" firstAttribute="trailing" secondItem="D7M-VB-7C2" secondAttribute="trailing" id="cdc-mS-NI2"/>
+                            <constraint firstItem="gjd-31-cLD" firstAttribute="top" secondItem="D7M-VB-7C2" secondAttribute="bottom" constant="48" id="fFy-Sb-LR4"/>
+                            <constraint firstItem="t85-n1-eQg" firstAttribute="centerX" secondItem="mA3-Gp-E7R" secondAttribute="centerX" id="ndB-dE-oRg"/>
+                            <constraint firstItem="D7M-VB-7C2" firstAttribute="centerX" secondItem="mA3-Gp-E7R" secondAttribute="centerX" id="q6I-xu-gVQ"/>
+                            <constraint firstItem="mA3-Gp-E7R" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="tpf-sp-yGs"/>
+                            <constraint firstItem="mA3-Gp-E7R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xtg-hE-q2y"/>
+                            <constraint firstItem="CYi-6k-vrt" firstAttribute="leading" secondItem="t85-n1-eQg" secondAttribute="trailing" constant="8" symbolic="YES" id="xzX-ib-eaJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="billAmountTextField" destination="mA3-Gp-E7R" id="hdC-UF-cjK"/>
+                        <outlet property="calculationButton" destination="D7M-VB-7C2" id="RM4-0E-GoB"/>
+                        <outlet property="percentLabel" destination="CYi-6k-vrt" id="p7K-21-Y85"/>
+                        <outlet property="tipCalculationLabel" destination="gjd-31-cLD" id="B4K-Ri-kUc"/>
+                        <outlet property="tipPercentageField" destination="t85-n1-eQg" id="po5-Xb-Dhp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>
